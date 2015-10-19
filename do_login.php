@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-require_once('include/connection.php');
-require_once('include/functions.php');
+require_once('common/autoload.php');
 
 $fields = array('email', 'password');
 
@@ -15,7 +14,8 @@ foreach ($fields as $field) {
 }
 
 if ($valid === true) {
-    $isLoggedIn = login($_POST['email'], sha1($_POST['password']));
+    $user = new User();
+    $isLoggedIn = $user->login($_POST['email'], $_POST['password']);
 
     if ($isLoggedIn === true) {
         header('Location: account.php');

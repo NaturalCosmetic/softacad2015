@@ -1,6 +1,7 @@
 <?php
 
 function headerMenu() {
+    return array();
     global $connection;
 
     $result = mysqli_query($connection, 'SELECT * FROM `menu`');
@@ -32,27 +33,4 @@ function login($email, $password) {
 
 function loggedIn() {
     return isset($_SESSION['user']); // true | false
-}
-
-function addProduct($data) {
-    global $connection;
-    // insert into db
-    /*
-     insertDB($data)
-     array(
-        'user_id' => 1,
-        'name' => 'Test',
-        'price' => 143,
-        'quantity' => 5
-    )
-     */
-    $sql = "INSERT INTO `products`
-          (`user_id`, `name`, `price`, `quantity`)
-            VALUES
-          ('".$data['user_id']."', '".$data['name']."', '".$data['price']."', '".$data['quantity']."')
-    ";
-
-    mysqli_query($connection, $sql);
-
-    return true;
 }
