@@ -1,3 +1,8 @@
 # eBay
 
-## Here we have all the files for the project
+## Structure
+
+* cms - the admin area 
+* common - We keep our classes there
+* resources - js, css, images
+* storage - uploading files there
