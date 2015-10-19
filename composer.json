@@ -1,0 +1,14 @@
+{
+    "name": "eBay",
+    "authors": [
+        {
+            "name": "Galin Denev",
+            "email": "galin.denev@rewardgateway.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "common/"
+        ]
+    }
+}
